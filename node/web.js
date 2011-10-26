@@ -22,6 +22,20 @@ var server = net.createServer(function (socket) {
     }
 
   })
+  socket.on("json", function(data) {
+      data.user = "greg";
+      data.project = "Skelestreamer";
+      httpc.post({
+          uri : 'http://www.itpcakemix.com/public',
+          body : JSON.stringify(jsonData)
+      }, function(err, ok) {
+          if (err) {
+              console.log(err)
+          } else {
+              console.log(ok)
+          }
+      })
+  });
 });
 server.listen(1337, "127.0.0.1");
 
