@@ -1,7 +1,7 @@
 var net = require('net');
 var http = require('http');
 var io = require('socket.io').listen(5000);
-
+var httpc = require('request');
 var gsock;
 
 var server = net.createServer(function (socket) {
